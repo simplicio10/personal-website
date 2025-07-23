@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <section>
-      Front Page
+      About page
     </section>
   )
 }

@@ -5,21 +5,23 @@ import { GeistMono } from 'geist/font/mono'
 import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Cormorant_Garamond } from 'next/font/google'
 import Footer from './components/footer'
-import { baseUrl } from './sitemap'
+
+export const garamond = Cormorant_Garamond({subsets: ['latin']})
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Tex Pasley',
+    template: '%s | Tex Pasley',
   },
-  description: 'This is my portfolio.',
+  description: 'A personal webpage for Tex Pasley. Tex is a lawyer, coder, and writer, based in Chicago, Illinois.\
+  He is a freelance technology consultant in innovative thinker in the world of legal AI.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
-    url: baseUrl,
-    siteName: 'My Portfolio',
+    title: 'Tex Pasley',
+    description: 'A personal webpage for Tex Pasley. Tex is a lawyer, coder, and writer, based in Chicago, Illinois.\
+  He is a freelance technology consultant in innovative thinker in the world of legal AI.',
+    siteName: 'Tex Pasley\'s personal website',
     locale: 'en_US',
     type: 'website',
   },
@@ -46,11 +48,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
-        GeistSans.variable,
-        GeistMono.variable
-      )}
+      className={cx(garamond.className,
+        'text-black bg-blue-200')}
     >
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
